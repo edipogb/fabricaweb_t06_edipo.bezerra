@@ -9,6 +9,8 @@ import br.com.fabricadeprogramador.persistencia.entidade.Usuario;
 
 
 public class TesteUsuarioDAO {
+	
+	//Classe para testar o UsuarioDAO
 
 	public static void main(String[] args) {
 		
