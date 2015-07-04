@@ -149,4 +149,33 @@ public class UsuarioDAO {
 		return listaRetorno;
 	}
 	
+public Usuario autenticar(Usuario usu){
+		
+		//sql
+		String sql = "SELECT * FROM usuario WHERE login=? and senha=md5(?)";
+		
+		try (PreparedStatement preparador = con.prepareStatement(sql))
+		{
+			
+			preparador.setString(1, usu.getLogin());
+			preparador.setString(2, usu.getSenha());
+			
+			ResultSet result = preparador.executeQuery();
+			if(result.next()){
+				
+				Usuario retorno = new Usuario();
+				retorno.setId(result.getInt("id"));
+				retorno.setNome(result.getString("nome"));
+				retorno.setLogin(result.getString("login"));
+				retorno.setSenha(result.getString("senha"));
+				
+				return retorno;
+			}else{
+				return null;
+			}
+			
+		} catch (SQLException e) {
+			throw new RuntimeException("Erro ao autenticar!", e);
+		}
+	}
 }

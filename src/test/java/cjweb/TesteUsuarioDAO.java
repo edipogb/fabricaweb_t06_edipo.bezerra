@@ -10,7 +10,7 @@ import br.com.fabricadeprogramador.persistencia.entidade.Usuario;
 
 public class TesteUsuarioDAO {
 	
-	//Classe para testar o UsuarioDAO
+		
 
 	public static void main(String[] args) {
 		
@@ -33,6 +33,26 @@ public class TesteUsuarioDAO {
 		
 	}
 
+	public static void testeAutenticar(UsuarioDAO dao, Usuario usu,
+			Scanner leitor) {
+
+		System.out.println("Login do usuário: ");
+		usu.setLogin(leitor.nextLine());
+
+		System.out.println("Senha do usuário: ");
+		usu.setSenha(leitor.nextLine());
+		
+		Usuario retornado = dao.autenticar(usu);
+		// Imprimir
+
+		System.out.println();
+		System.out.println("Nome: " + retornado.getNome());
+		System.out.println("Login: " + retornado.getLogin());
+		System.out.println("Senha: " + retornado.getSenha());
+		System.out.println("ID: " + retornado.getId());
+		System.out.println();
+
+	}
 	
 	public static void testeBuscarTodos(UsuarioDAO dao){
 		List<Usuario> lista = dao.buscaTodos();
