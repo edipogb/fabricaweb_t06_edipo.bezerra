@@ -53,13 +53,13 @@ public class UsuarioDAO {
 		}
 	}
 
-	public void excluir(Usuario usu) {
+	public void excluir(Integer id) {
 
 		// Montar o SQL
 		String sql = "DELETE from usuario where id=?";
 
 		try (PreparedStatement preparador = con.prepareStatement(sql)) {
-			preparador.setInt(1, usu.getId());
+			preparador.setInt(1, id);
 			preparador.execute();
 
 		} catch (SQLException ex) {
