@@ -10,7 +10,7 @@ import java.util.List;
 import br.com.fabricadeprogramador.persistencia.entidade.Usuario;
 import br.com.fabricadeprogramador.persistencia.jdbc.ConexaoFactory;
 
-public class UsuarioDAO {
+public class UsuarioDAOJDBC {
 
 	// Pegar a conexão com o Factory
 	private Connection con = ConexaoFactory.getConection();

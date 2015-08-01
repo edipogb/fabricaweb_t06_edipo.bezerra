@@ -3,7 +3,7 @@ package cjweb;
 import java.util.List;
 import java.util.Scanner;
 
-import br.com.fabricadeprogramador.persistencia.DAO.UsuarioDAO;
+import br.com.fabricadeprogramador.persistencia.DAO.UsuarioDAOJDBC;
 import br.com.fabricadeprogramador.persistencia.entidade.Usuario;
 
 
@@ -18,7 +18,7 @@ public class TesteUsuarioDAO {
 		Scanner leitor = new Scanner(System.in);
 		
 		//Instancia de UsuárioDAO
-		UsuarioDAO dao = new UsuarioDAO();
+		UsuarioDAOJDBC dao = new UsuarioDAOJDBC();
 		
 		//Instancia de Usuário
 		Usuario usu = new Usuario();
@@ -33,7 +33,7 @@ public class TesteUsuarioDAO {
 		
 	}
 
-	public static void testeAutenticar(UsuarioDAO dao, Usuario usu,
+	public static void testeAutenticar(UsuarioDAOJDBC dao, Usuario usu,
 			Scanner leitor) {
 
 		System.out.println("Login do usuário: ");
@@ -54,7 +54,7 @@ public class TesteUsuarioDAO {
 
 	}
 	
-	public static void testeBuscarTodos(UsuarioDAO dao){
+	public static void testeBuscarTodos(UsuarioDAOJDBC dao){
 		List<Usuario> lista = dao.buscaTodos();
 		for (Usuario usu : lista){
 			System.out.println("ID: " + usu.getId());
@@ -65,7 +65,7 @@ public class TesteUsuarioDAO {
 	}
 	
 	
-	public static void testeBuscaPorId(UsuarioDAO dao, Scanner leitor) {
+	public static void testeBuscaPorId(UsuarioDAOJDBC dao, Scanner leitor) {
 		
 		System.out.println("Entre com o ID do Usuário: ");
 		Integer id = leitor.nextInt();
@@ -83,7 +83,7 @@ public class TesteUsuarioDAO {
 		
 	}
 
-	public static void testeSalvar(Usuario usu, UsuarioDAO dao, Scanner leitor) {
+	public static void testeSalvar(Usuario usu, UsuarioDAOJDBC dao, Scanner leitor) {
 		
 		System.out.println("Entre com o ID do Usuário: ");
 		usu.setId(leitor.nextInt());
@@ -98,7 +98,7 @@ public class TesteUsuarioDAO {
 		System.out.println("Usuario Salvo com sucesso!");
 	}
 
-	public static void testeExcluir(Usuario usu, UsuarioDAO dao, Scanner leitor) {
+	public static void testeExcluir(Usuario usu, UsuarioDAOJDBC dao, Scanner leitor) {
 		
 		System.out.println("Entre com o ID do Usuário: ");
 		usu.setId(leitor.nextInt());
@@ -107,7 +107,7 @@ public class TesteUsuarioDAO {
 		System.out.println("Usuário Excluido com sucesso!");
 	}
 
-	public static void testeAlterar(Usuario usu, UsuarioDAO dao, Scanner leitor) {
+	public static void testeAlterar(Usuario usu, UsuarioDAOJDBC dao, Scanner leitor) {
 		
 		System.out.println("Entre com o ID do Usuário: ");
 		usu.setId(leitor.nextInt());
@@ -122,7 +122,7 @@ public class TesteUsuarioDAO {
 		System.out.println("Usuario Alterado com sucesso!");
 	}
 
-	public static void testeCadastrar(Usuario usu, UsuarioDAO dao, Scanner leitor) {
+	public static void testeCadastrar(Usuario usu, UsuarioDAOJDBC dao, Scanner leitor) {
 		
 		System.out.println("Entre com o Nome de Usuário: ");
 		usu.setNome(leitor.next());

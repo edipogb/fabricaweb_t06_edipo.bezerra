@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import br.com.fabricadeprogramador.persistencia.DAO.UsuarioDAO;
+import br.com.fabricadeprogramador.persistencia.DAO.UsuarioDAOJDBC;
 import br.com.fabricadeprogramador.persistencia.entidade.Usuario;
 
 
@@ -54,7 +54,7 @@ public class UsuarioController extends HttpServlet {
 		Usuario usu = new Usuario();
 		
 		//Instanciando o UsuarioDAO
-		UsuarioDAO dao = new UsuarioDAO();
+		UsuarioDAOJDBC dao = new UsuarioDAOJDBC();
 		
 		//Qual ação tomar
 		if(acao.equalsIgnoreCase("cad")){
@@ -121,7 +121,7 @@ public class UsuarioController extends HttpServlet {
 			usu.setSenha(senha);
 			
 			//Instamcia de UsuárioDAO
-			UsuarioDAO dao = new UsuarioDAO();
+			UsuarioDAOJDBC dao = new UsuarioDAOJDBC();
 			dao.alterar(usu);
 			
 			//Fazer o Response
@@ -136,7 +136,7 @@ public class UsuarioController extends HttpServlet {
 			usu.setSenha(senha);
 			
 			//Instamcia de UsuárioDAO
-			UsuarioDAO dao = new UsuarioDAO();
+			UsuarioDAOJDBC dao = new UsuarioDAOJDBC();
 			dao.cadastrar(usu);
 			
 			//Fazer o Response
