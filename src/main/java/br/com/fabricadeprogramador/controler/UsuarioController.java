@@ -1,4 +1,4 @@
-package br.com.fabricadeprograador.controler;
+package br.com.fabricadeprogramador.controler;
 
 import java.io.IOException;
 
